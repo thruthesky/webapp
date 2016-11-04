@@ -1,8 +1,21 @@
 import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
+
+
+import { App } from '../providers/app';
+import { FireModule } from '../fireframe2/fire-module';
+
+import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
+const cloudSettings: CloudSettings = {
+  'core': {
+    'app_id': '2e401812'
+  }
+};
+
 
 @NgModule({
   declarations: [
@@ -11,7 +24,9 @@ import { LoginPage } from '../pages/login/login';
     LoginPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+     CloudModule.forRoot(cloudSettings),
+    FireModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -19,6 +34,6 @@ import { LoginPage } from '../pages/login/login';
     HomePage,
     LoginPage
   ],
-  providers: []
+  providers: [ Storage, App ]
 })
 export class AppModule {}

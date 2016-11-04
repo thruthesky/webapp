@@ -69,3 +69,11 @@ $colors: (
 
 $ionicons-font-path: "../assets/fonts";
 @import "ionicons";
+
+
+
+[warning] {
+  padding: .4em .8em;
+  color: darkred;
+  background-color: lightgrey;
+}
