@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
-import { Storage } from '@ionic/storage';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { LoginPage } from '../pages/login/login';
+import { LoginPage } from '../fireframe2/sample-pages/login/login';
+import { RegisterPage } from '../fireframe2/sample-pages/register/register';
 
 
-import { App } from '../providers/app';
 import { FireModule } from '../fireframe2/fire-module';
 
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
@@ -21,7 +20,8 @@ const cloudSettings: CloudSettings = {
   declarations: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    RegisterPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -32,8 +32,9 @@ const cloudSettings: CloudSettings = {
   entryComponents: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    RegisterPage
   ],
-  providers: [ Storage, App ]
+  providers: []
 })
 export class AppModule {}
