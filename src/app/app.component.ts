@@ -32,7 +32,7 @@ export class MyApp {
    */
   updateApp() {
     this.updateSnapshot();
-    setInterval( () => this.updateSnapshot(), 30 * 1000 );
+    setInterval( () => this.updateSnapshot(), 300 * 1000 );
   }
   updateSnapshot() {
     console.log("MyApp::updateSnapshot()");
